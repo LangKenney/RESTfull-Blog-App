@@ -1,0 +1,49 @@
+<% include ./partials/header %>
+
+<div class="ui main text container segment">
+    <div class="ui huge header"><%=blog.title%></div>
+    <p> <%=blog.created.toDateString()%></p>
+    <div class="ui top attached">
+        <div class="item">
+            <img class="ui centered rounded image" src="<%=blog.image%>">
+            <div class="content">
+                <p><%-blog.body%> </p>
+                
+            </div>
+
+        <!--<form action="/blogs/<%=blog._id %>/edit">-->
+        <!--    <button class="ui yellow small button" type="submit" value="Edit Blog Post">Edit</button> -->
+        <!--</form>-->
+        <!--<form action="/blogs/<%=blog._id %>/edit">-->
+        <!--    <button class="negative ui button" type="submit">Delete</button>-->
+        <!--</form>-->
+        <!--<a class="negative ui button" href="/blogs/<%=blog._id %>/edit">test</a>-->
+        <!--<form action="/blogs/">-->
+        <!--    <button class="ui labeled icon button" type="submit">-->
+        <!--        <i class="left chevron icon"></i>-->
+        <!--        Back-->
+        <!--    </button>-->
+        <!--</form>-->
+    </div>
+    </div>
+    
+    <form action="/blogs/">
+        <button class="ui labeled icon button" type="submit">
+            <i class="left arrow icon"></i>
+                Back
+        </button>
+    </form>
+    
+    <hr>
+    <div class="ui buttons">
+      <a class="ui yellow small button" href="/blogs/<%=blog._id %>/edit">Edit Blog</a> 
+      <div class="or"></div>
+        <form action="/blogs/<%= blog._id %>?_method=DELETE" method="POST">
+                <button class="ui red button">Delete Blog</button>
+        </form>
+      <!--<a class="negative ui button" href=""/blogs/"">Delete</a>-->
+    </div>
+</div>
+
+
+<% include ./partials/footer %>
